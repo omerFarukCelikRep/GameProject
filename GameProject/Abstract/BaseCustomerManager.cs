@@ -14,12 +14,12 @@ namespace GameProject.Abstract
 
         public void Delete(Customer customer)
         {
-            Console.WriteLine(customer.FirstName + " Updated");
+            Console.WriteLine(customer.FirstName + " Deleted");
         }
 
         public void Update(Customer customer)
         {
-            Console.WriteLine(customer.FirstName + " Deleted");
+            Console.WriteLine(customer.FirstName + " Updated");
         }
     }
 }
