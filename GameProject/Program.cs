@@ -1,4 +1,6 @@
-﻿using System;
+﻿using GameProject.Concrete;
+using GameProject.Entities;
+using System;
 
 namespace GameProject
 {
@@ -6,7 +8,8 @@ namespace GameProject
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            CustomerManager customerManager = new CustomerManager();
+            customerManager.Update(new Customer { FirstName = "Ömer Faruk" });
         }
     }
 }
