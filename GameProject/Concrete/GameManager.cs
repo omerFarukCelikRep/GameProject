@@ -8,8 +8,15 @@ namespace GameProject.Adapters
 {
     public class GameManager : BaseManager<Game>
     {
+        List<Game> games;
+        public GameManager()
+        {
+            games = new List<Game>();
+        }
+
         public override void Add(Game game)
         {
+            games.Add(game);
             Console.WriteLine(game.Name + " Game Added");
         }
 
