@@ -6,19 +6,19 @@ using System.Text;
 
 namespace GameProject.Concrete
 {
-    public class CampaignManager : ICampaignService
+    public class CampaignManager : BaseManager<Campaign>
     {
-        public void Add(Campaign campaign)
+        public override void Add(Campaign campaign)
         {
             Console.WriteLine(campaign.Name + " Campaign Added");
         }
 
-        public void Delete(Campaign campaign)
+        public override void Delete(Campaign campaign)
         {
             Console.WriteLine(campaign.Name + " Campaign Deleted");
         }
 
-        public void Update(Campaign campaign)
+        public override void Update(Campaign campaign)
         {
             Console.WriteLine(campaign.Name + " Campaign Updated");
         }

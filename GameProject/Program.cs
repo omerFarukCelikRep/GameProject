@@ -28,12 +28,17 @@ namespace GameProject
                 NationalityID = "12345678901"
             };
 
-            BaseCustomerManager customerManager = new CustomerManager(new EDevletServiceAdapter());
+            BaseManager customerManager = new CustomerManager(new EDevletServiceAdapter());
             customerManager.Add(customer1);
             customerManager.Add(customer2);
 
             customerManager.Update(customer2);
             customerManager.Delete(customer1);
+
+            Game game = new Game { ID = 1, Name = "Call Of Duty", PublishDate = new DateTime(2018, 11, 11) };
+
+            GameManager gameManager = new GameManager();
+            gameManager.Sell(customer1, game);
         }
     }
 }

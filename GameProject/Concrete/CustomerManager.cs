@@ -6,7 +6,7 @@ using System.Text;
 
 namespace GameProject.Concrete
 {
-    public class CustomerManager : BaseCustomerManager
+    public class CustomerManager : BaseManager<Customer>
     {
         private ICustomerCheckService _customerCheckService;
 
@@ -19,7 +19,7 @@ namespace GameProject.Concrete
         {
             if (_customerCheckService.CheckIfReal(customer))
             {
-                base.Add(customer); 
+                Console.WriteLine(customer.FirstName + " " + customer.LastName + " Added");
             }
             else
             {
@@ -29,12 +29,12 @@ namespace GameProject.Concrete
 
         public override void Update(Customer customer)
         {
-            base.Update(customer);
+            Console.WriteLine(customer.FirstName + " " + customer.LastName + " Updated");
         }
 
         public override void Delete(Customer customer)
         {
-            base.Delete(customer);
+            Console.WriteLine(customer.FirstName + " " + customer.LastName + " Deleted");
         }
     }
 }

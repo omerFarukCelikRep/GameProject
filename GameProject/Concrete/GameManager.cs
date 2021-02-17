@@ -6,19 +6,19 @@ using System.Text;
 
 namespace GameProject.Adapters
 {
-    public class GameManager : IGameService
+    public class GameManager : BaseManager<Game>
     {
-        public void Add(Game game)
+        public override void Add(Game game)
         {
             Console.WriteLine(game.Name + " Game Added");
         }
 
-        public void Delete(Game game)
+        public override void Delete(Game game)
         {
             Console.WriteLine(game.Name + " Game Deleted");
         }
 
-        public void Update(Game game)
+        public override void Update(Game game)
         {
             Console.WriteLine(game.Name + " Game Added");
         }
