@@ -3,6 +3,7 @@ using GameProject.Adapters;
 using GameProject.Concrete;
 using GameProject.Entities;
 using System;
+using System.Collections.Generic;
 
 namespace GameProject
 {
@@ -28,7 +29,7 @@ namespace GameProject
                 NationalityID = "12345678901"
             };
 
-            BaseManager customerManager = new CustomerManager(new EDevletServiceAdapter());
+            CustomerManager customerManager = new CustomerManager(new EDevletServiceAdapter());
             customerManager.Add(customer1);
             customerManager.Add(customer2);
 
@@ -38,7 +39,20 @@ namespace GameProject
             Game game = new Game { ID = 1, Name = "Call Of Duty", PublishDate = new DateTime(2018, 11, 11) };
 
             GameManager gameManager = new GameManager();
-            gameManager.Sell(customer1, game);
+            gameManager.Add(game);
+            List<Game> gameList = new List<Game>();
+            gameList.Add(game);
+
+            Campaign campaign = new Campaign
+            {
+                ID = 1,
+                Name = "Kış İndirimleri",
+                StartDate = new DateTime(2021, 2, 15),
+                EndDate = new DateTime(2021, 4, 1)
+            };
+
+            SalesManager salesManager = new SalesManager();
+            salesManager.Sell(customer1, gameList, campaign);
         }
     }
 }
