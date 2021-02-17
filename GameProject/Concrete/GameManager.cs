@@ -8,9 +8,19 @@ namespace GameProject.Adapters
 {
     public class GameManager : IGameService
     {
-        public void Sell(Customer customer, Game game)
+        public void Add(Game game)
         {
-            Console.WriteLine(game.Name + " Sold to " + customer.FirstName + " " + customer.LastName);
+            Console.WriteLine(game.Name + " Game Added");
+        }
+
+        public void Delete(Game game)
+        {
+            Console.WriteLine(game.Name + " Game Deleted");
+        }
+
+        public void Update(Game game)
+        {
+            Console.WriteLine(game.Name + " Game Added");
         }
     }
 }
